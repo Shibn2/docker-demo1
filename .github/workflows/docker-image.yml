@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file docker-deployement-demo/Dockerfile --tag angular-app:$(date +%s)
+      run: docker build . --file docker-deployement-demo/Dockerfile --tag react-docker-demo:$(date +%s)
   push_job:
     needs: build_job
     runs-on: ubuntu-latest
@@ -22,5 +22,5 @@ jobs:
       with:
         username: ${​​​​​​{​​​​​​ secrets.DOCKER_USERNAME }​​​​​​}​​​​​​
         password: ${​​​​​​{​​​​​​ secrets.DOCKERHUB_TOKEN }​​​​​​}​​​​​​
-        repository: ${​​​​​​{​​​​​​ secrets.DOCKER_USERNAME }​​​​​​}​​​​​​/react-docker-dem
+        repository: ${​​​​​​{​​​​​​ secrets.DOCKER_USERNAME }​​​​​​}​​​​​​/react-docker-demo
         tags: latest
