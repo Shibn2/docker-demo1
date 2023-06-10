@@ -1,7 +1,7 @@
 # Use an official Node.js runtime as the base image
 FROM nginx:alpine
 
-COPY /build /usr/share/nginx/html
+COPY docker-deployement-demo/build /usr/share/nginx/html
 
 EXPOSE 80
 
