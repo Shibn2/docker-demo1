@@ -15,6 +15,9 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file docker-deployement-demo/Dockerfile --tag your-docker-image:latest --progress plain
 
+      - name: Check build directory
+        run: ls
+
   push_job:
     needs: build_job
     runs-on: ubuntu-latest
