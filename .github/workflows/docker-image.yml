@@ -29,7 +29,8 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
       - name: Push to Docker Hub
-        run: docker push react-deploy-demo
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/react-demo:react-deploy-demo
+
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
