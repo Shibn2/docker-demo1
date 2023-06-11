@@ -15,6 +15,9 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file docker-deployement-demo/Dockerfile --tag react-deploy-demo:latest
 
+      - name: List Docker images  
+        run: docker images
+        
   push_job:
     needs: build_job
     runs-on: ubuntu-latest
